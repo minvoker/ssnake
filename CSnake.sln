@@ -5,8 +5,6 @@ VisualStudioVersion = 25.0.1706.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSnake", "CSnake\CSnake.csproj", "{682CF77E-F20B-4C6C-B7DF-F86BFCCD84E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockTask", "..\ClockTask\ClockTask\ClockTask.csproj", "{1E414F5D-9FD6-4126-A38E-161805DA44D2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
