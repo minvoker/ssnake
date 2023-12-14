@@ -7,57 +7,57 @@ namespace CSnake
 {
 	public class Game
 	{
-		private const int UpdateInterval = 120; // Millsecs
-		private Stopwatch timer;
-		private int cellSize;
-		private int cellNumber;
+	private const int UpdateInterval = 120; // Millsecs
+	private Stopwatch timer;
+	private int cellSize;
+	private int cellNumber;
         private int score;
         private Snake snake;
         private Food food;
         private Font myFont;
 
         public Game()
-		{  
+	{  
             timer = new Stopwatch();
-			cellSize = 40;
-			cellNumber = 15;
-			snake = new Snake(cellNumber, cellSize);
-			food = new Food(cellNumber, cellSize);
+	    cellSize = 40;
+	    cellNumber = 15;
+	    snake = new Snake(cellNumber, cellSize);
+	    food = new Food(cellNumber, cellSize);
             score = 0;
             myFont = SplashKit.LoadFont("Roboto-Black", "./font/Roboto-Black.ttf");
         }
 
-		public void Update(Window window)
-		{
+	public void Update(Window window)
+	{
             SplashKit.ProcessEvents();
             HandleInput();
 
             snake.Move();
             CollisionDetection();
 
-			DrawGame(window);
+	    DrawGame(window);
             SplashKit.RefreshScreen();
-		}
+	}
 
-		public void Run()
-		{
+	public void Run()
+	{
             timer.Start();
             Window window = new Window("CSnake", cellSize * cellNumber, cellSize * cellNumber);
 
-			do
+		do
+		{
+			if (timer.ElapsedMilliseconds >= UpdateInterval)
 			{
-				if (timer.ElapsedMilliseconds >= UpdateInterval)
-				{
-					timer.Restart();
-					Update(window);
-				}
+				timer.Restart();
+				Update(window);
+			}
 
-			} while (!window.CloseRequested);
+		} while (!window.CloseRequested);
 
-			window.Close();
-		}
+		window.Close();
+	}
 
-		public void HandleInput()
+	public void HandleInput()
         {
             if (SplashKit.KeyTyped(KeyCode.DownKey) && snake.Direction.Y != -1)
             {
@@ -78,12 +78,12 @@ namespace CSnake
         }
 
         public void DrawGame(Window window)
-		{
+	{
             SplashKit.ClearScreen(Color.White);
             snake.Draw();
-			food.Draw();
-			DrawScore(window);
-		}
+	    food.Draw();
+	    DrawScore(window);
+	}
 
         public void CollisionDetection()
         {
