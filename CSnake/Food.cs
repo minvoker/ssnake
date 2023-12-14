@@ -4,9 +4,9 @@ namespace CSnake
 {
 	public class Food
 	{
-		private Random r = new Random();
-		private Vector2D pos;
-		private int cellNumber;
+	private Random r = new Random();
+	private Vector2D pos;
+	private int cellNumber;
         private int cellSize;
 
         public Food(int cellNumber, int cellSize)
@@ -17,16 +17,16 @@ namespace CSnake
             RandomPos();
         }
 
-		public void RandomPos()
-		{
+	public void RandomPos()
+	{
             int x = r.Next(0, cellNumber);
             int y = r.Next(0, cellNumber);
             pos.X = x * cellSize;
             pos.Y = y * cellSize;
         }
 
-		public void Draw()
-		{
+	public void Draw()
+	{
             int foodSize = cellSize;
             SplashKit.FillRectangle(Color.Red, pos.X, pos.Y, foodSize, foodSize);
         }
