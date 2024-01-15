@@ -1,5 +1,5 @@
 # Snake C#
-This repository contains my first project using Pygame, a 2-Player Pong game. This project was completed in one day.
+This repository contains ssnake
 
 ![ssnake](snake_img.jpg)
 
